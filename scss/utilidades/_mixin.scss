@@ -1,0 +1,19 @@
+@mixin border-and-shadow($radius:10px , $shadow: 2px 2px 5px ) {
+    border-radius: $radius;
+    box-shadow: $shadow;
+  }
+
+  .element {
+    @include border-and-shadow(10px, 2px 2px 5px );
+  }
+
+  @mixin text-style($size: 16px, $color: #333) {
+    font-size: $size;
+    color: $color;
+  }
+
+  .title {
+    @include text-style(24px, #333);
+  }
+
+  

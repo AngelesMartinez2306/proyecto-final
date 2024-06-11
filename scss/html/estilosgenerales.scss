@@ -1,0 +1,156 @@
+/*estilos generales*/
+
+@import "../utilidades/variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $letra;
+}
+
+header {
+    background-color: $color-principal;
+    color: $color-secundario;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+        width: 80px;
+    }
+
+    nav ul{
+        list-style: none;
+        display: flex;
+        li{
+            margin-right: 20px;
+
+            :hover{
+                animation: pulse;
+                animation-duration: 1s;
+            }
+            a{
+                text-decoration: none;
+                color: $color-secundario;
+            }
+        }
+    }
+
+}
+
+main{
+    padding: 20px;
+
+    section{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+
+        div{
+            text-align: center;
+    margin-bottom: 20px;
+        }
+    }
+}
+
+footer{
+    background-color: $color-principal;
+    color: $color-secundario;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 599px) {
+
+    header{
+        img{
+            width: 150px;
+            padding: 10px 20px;
+        }
+        nav ul{
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            li{
+                margin: 0;
+                margin-bottom: 10px; 
+            }
+        }
+    }
+    main{
+        .img img{
+            max-width: 80%;
+            height: auto;
+        }
+    }
+}
+  
+  @media screen and (min-width: 600px) and (max-width: 1023px) {
+    header{
+        img{
+            width: 150px;
+            padding: 10px 20px;
+        }
+
+        nav ul{
+            flex-direction: column;
+            align-items: center;
+            li{
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    main{
+        .img img{
+            max-width: 60%;
+            height: auto;
+        }
+    }
+
+    section{
+        grid-template-columns: repeat(3, 1fr);
+
+        div{
+            max-width: 200px;
+        }
+    }
+  }
+  
+  
+  @media screen and (min-width: 1024px) {
+
+    header{
+        img{
+            width: 150px;
+            padding: 15px 30px;
+        }
+        nav ul{
+            flex-direction: row;
+            li{
+                margin-right: 25px;
+                margin-bottom: 0;
+            }
+        }
+    }
+    main{
+        .img img{
+            max-width: 40%;
+            height: auto;
+        }
+    }
+    section{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        
+        div{
+            max-width: 250px;
+        }
+    }
+  }
